@@ -1,4 +1,4 @@
-package epam.shekh;
+package epam.shekh.Task1;
 
 public class Task01 {
     public static void main(String[] args) {

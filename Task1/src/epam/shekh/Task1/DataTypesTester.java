@@ -1,4 +1,4 @@
-package epam.shekh;
+package epam.shekh.Task1;
 
 public class DataTypesTester {
     public static void testByte() {
