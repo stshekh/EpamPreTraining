@@ -1,27 +1,36 @@
 package epam.shekh.Task2.ex6;
 
 public class Averages {
-    public static void averageArifm(int num){
-        int counter=0;
+    private static final int ONEDIGIT = 10;
+    public static double averageArifm(int num){
+
         double sum=0;
-        while(num>0) {
-            int curNum=num%10;
-            sum+=curNum;
-            num/=10;
-            counter++;
-        }
-        System.out.println("Average arifm is "+sum/counter);
+
+        sum+=num%ONEDIGIT;
+        num/=ONEDIGIT;
+        sum+=num%ONEDIGIT;
+        num/=ONEDIGIT;
+        sum+=num%ONEDIGIT;
+        num/=ONEDIGIT;
+        sum=sum+num%ONEDIGIT;
+        num/=ONEDIGIT;
+        sum=sum+num%ONEDIGIT+num/ONEDIGIT;
+        return sum/6;
+
     }
 
-    public static void averageGeometr(int num){
-        int counter=0;
+    public static double averageGeometr(int num){
         int mul=1;
-        while(num>0) {
-            int curNum=num%10;
-            mul*=curNum;
-            num/=10;
-            counter++;
-        }
-        System.out.println("Average geom is "+Math.pow(mul,1.0/counter));
+        mul*=num%ONEDIGIT;
+        num/=ONEDIGIT;
+        mul*=num%ONEDIGIT;
+        num/=ONEDIGIT;
+        mul*=num%ONEDIGIT;
+        num/=ONEDIGIT;
+        mul*=num%ONEDIGIT;
+        num/=ONEDIGIT;
+        mul=mul*(num%ONEDIGIT)*(num/ONEDIGIT);
+        return Math.pow(mul,1.0/6);
+
     }
 }

@@ -8,7 +8,7 @@ public class RingSquare {
             System.out.println("You entered R1<R2.\n Try again!");
         }
     }
-    static double circleSquare(double radius){
+    private static double circleSquare(double radius){
         return Math.PI * radius * radius;
     }
 }

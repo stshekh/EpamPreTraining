@@ -1,45 +1,50 @@
 package epam.shekh.Task2.ex4;
 
 public class Sequences {
+    private static final int ONEDIGIT = 10;
 
-    public static void increasingSequence(int num) {
-        boolean isOk = true;
-        int prevNum = 10;
-        while (num > 0) {
-            int curNum = num % 10;
-            if (curNum < prevNum) {
-                prevNum = curNum;
-                num /= 10;
-            } else {
-                isOk = false;
-                num /= 10;
-            }
+    public static boolean increasingSequence(int num) {
 
-        }
-        if (isOk) {
-            System.out.println("sequence is increasing");
+        int lastNum, preLastNum;
+        lastNum = num % ONEDIGIT;
+        num /= ONEDIGIT;
+        preLastNum = num % ONEDIGIT;
+
+        if (lastNum < preLastNum) {
+            return false;
         } else {
-            System.out.println("wrong sequence");
+            lastNum = preLastNum;
         }
+        num /= ONEDIGIT;
+        preLastNum = num % ONEDIGIT;
+        if (lastNum < preLastNum) {
+            return false;
+        } else if (preLastNum < num / 10) {
+            return false;
+        }
+
+        return true;
     }
-    public static void decreasingSequence(int num) {
-        boolean isOk = true;
-        int prevNum = -1;
-        while (num > 0) {
-            int curNum = num % 10;
-            if (curNum > prevNum) {
-                prevNum = curNum;
-                num /= 10;
-            } else {
-                isOk = false;
-                num /= 10;
-            }
 
-        }
-        if (isOk) {
-            System.out.println("sequence is decreasing");
+    public static boolean decreasingSequence(int num) {
+        int lastNum, preLastNum;
+        lastNum = num % ONEDIGIT;
+        num /= ONEDIGIT;
+        preLastNum = num % ONEDIGIT;
+
+        if (lastNum > preLastNum) {
+            return false;
         } else {
-            System.out.println("wrong sequence");
+            lastNum = preLastNum;
         }
+        num /= ONEDIGIT;
+        preLastNum = num % ONEDIGIT;
+        if (lastNum > preLastNum) {
+            return false;
+        } else if (preLastNum > num / 10) {
+            return false;
+        }
+
+        return true;
     }
 }

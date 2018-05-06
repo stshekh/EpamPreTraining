@@ -1,23 +1,29 @@
 package epam.shekh.Task2.ex5;
 
 public class MulSumNumbers {
-    public static void sumNum(int num){
+    private static final int ONEDIGIT = 10;
+    public static int sumNum(int num){
         int sum=0;
-        while(num>0) {
-            int curNum=num%10;
-            sum+=curNum;
-            num/=10;
-        }
-        System.out.println("Sum is "+sum);
+        sum+=num%ONEDIGIT;
+        num/=ONEDIGIT;
+        sum+=num%ONEDIGIT;
+        num/=ONEDIGIT;
+        sum+=num%ONEDIGIT;
+        num/=ONEDIGIT;
+        sum=sum+num%ONEDIGIT+num/ONEDIGIT;
+        return sum;
     }
 
-    public static void mulNum(int num){
+    public static int mulNum(int num){
         int mul=1;
-        while(num>0) {
-            int curNum=num%10;
-            mul*=curNum;
-            num/=10;
-        }
-        System.out.println("Multiple is "+mul);
+        mul*=num%ONEDIGIT;
+        num/=ONEDIGIT;
+        mul*=num%ONEDIGIT;
+        num/=ONEDIGIT;
+        mul*=num%ONEDIGIT;
+        num/=ONEDIGIT;
+        mul=mul*(num%ONEDIGIT)*(num/ONEDIGIT);
+        return mul;
+
     }
 }

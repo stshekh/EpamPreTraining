@@ -24,21 +24,21 @@ public class Test {
 
         //Excercise 4
         System.out.println("\n****************----Sequences----*****************");
-        Sequences.decreasingSequence(9870);
-        Sequences.increasingSequence(1237);
+        System.out.println("Sequence is decreasing? "+Sequences.decreasingSequence(9870));
+        System.out.println("Sequence is increasing? "+Sequences.increasingSequence(1237));
 
         //Excercise 5
         System.out.println("\n****************----Multiple and sum----*****************");
-        MulSumNumbers.sumNum(13145);
-        MulSumNumbers.mulNum(12335);
+        System.out.println("Sum is "+MulSumNumbers.sumNum(13145));
+        System.out.println("Multiple is "+MulSumNumbers.mulNum(12335));
 
         //Excercise 6
         System.out.println("\n****************----Averages----*****************");
-        Averages.averageArifm(123456);
-        Averages.averageGeometr(123456);
+        System.out.println("Average arifm is : "+Averages.averageArifm(123456));
+        System.out.println("Average geom is "+Averages.averageGeometr(123456));
 
         //Excercise 7
         System.out.println("\n****************----Reverse----*****************");
-        ReversingNumber.revNumber(1234567);
+        System.out.println(ReversingNumber.revNumber(1234567));
     }
 }
