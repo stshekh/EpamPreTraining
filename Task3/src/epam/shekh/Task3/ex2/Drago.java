@@ -1,20 +1,28 @@
 package epam.shekh.Task3.ex2;
 
 public class Drago {
-    private int year;
+    private static final int YOUNGPREIOD = 200;
+    private static final int ADULTPREIOD = 200;
 
-    public Drago(int year) {
-        this.year = year;
+    private static final int HEADSYOUNGPREIOD = 200;
+    private static final int HEADSADULTPREIOD = 200;
+
+    private int age;
+
+    public Drago(int age) {
+        this.age = age;
     }
 
     int dragoHeads() {
-        int head = 3;
-        if (year <= 200) {
-            head = head + year * 3;
-        } else if (year > 200 && year <= 300) {
-            head = head + 200 * 3 + (year - 200) * 2;
-        } else {
-            head = head + 200 * 3 + 100 * 2 + (year - 300);
+        int head = 0;
+        if (age > 0) {
+            if (age < 200) {
+                head += age * 3 + 3;
+            } else if (age < 300) {
+                head += 203 + age * 2;
+            } else {
+                head += 503 + age;
+            }
         }
         return head;
     }

@@ -9,16 +9,16 @@ public class MoodSensor {
 
         switch (a) {
             case 0:
-                s += "\uD83D\uDE04";
+                s += ":)";
                 break;
             case 1:
-                s += "\uD83D\uDE12";
+                s += ":(";
                 break;
             case 2:
-                s += "\uD83D\uDE14";
+                s += "=D";
                 break;
             case 3:
-                s += "\uD83D\uDE06";
+                s += "=;(";
                 break;
             default:
                 break;

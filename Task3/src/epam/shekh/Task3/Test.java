@@ -18,12 +18,12 @@ public class Test {
         tr.itTraingle();
         System.out.println("-----------");
 
-        Drago oldDrago = new Drago(199);
+        Drago oldDrago = new Drago(200);
         oldDrago.headsAndEyes();
         System.out.println("-----------");
 
         LetterCheck.method1('k');
-        LetterCheck.method2('d');
+        LetterCheck.method2('q');
         LetterCheck.method3('q');
         LetterCheck.method4('y');
         System.out.println("-----------");

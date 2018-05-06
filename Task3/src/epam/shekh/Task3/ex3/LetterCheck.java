@@ -23,25 +23,17 @@ public class LetterCheck {
         boolean isOk = false;
         switch (c) {
             case 'e':
-                isOk = true;
-                break;
+
             case 'y':
-                isOk = true;
-                break;
+
             case 'u':
-                isOk = true;
-                break;
+
             case 'i':
-                isOk = true;
-                break;
+
             case 'o':
-                isOk = true;
-                break;
+
             case 'a':
                 isOk = true;
-                break;
-            default:
-                isOk = false;
                 break;
 
         }
@@ -64,7 +56,7 @@ public class LetterCheck {
     public static void method4(char c) {
 
         Pattern pt = Pattern.compile("[eyuioa]");//pattern for vocalic letters
-        Matcher mtch = pt.matcher(""+c);
+        Matcher mtch = pt.matcher(c+"");
         if(mtch.find())
             System.out.println("Letter " + c + " is vocalic");
 
