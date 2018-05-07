@@ -105,8 +105,20 @@ public class NaturalNumbers {
 
         }
         if(numCount==1){
-            System.out.println("This numbrer has many equal numbers");
+            System.out.println("This numbrer has many equal figures");
         }
         return numCount;
+    }
+
+    public boolean perfectNumber(){
+        int nat=getNum();
+        int perfSum=0;
+
+        for (int i = 1; i <nat ; i++) {
+            if(nat%i==0){
+                perfSum+=i;
+            }
+        }
+        return (nat==perfSum);
     }
 }
