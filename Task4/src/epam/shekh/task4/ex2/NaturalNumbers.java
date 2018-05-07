@@ -65,7 +65,7 @@ public class NaturalNumbers {
     public String primeNumbers() {
         int i;
         int nat = getNum();
-        String s = "Prime numbers of "+nat+":";
+        String s = "Prime numbers of " + nat + ":";
         for (i = 2; i <= nat; i++) {
             if (isSimple(i) && nat % i == 0) {
                 s += " " + i;
@@ -74,5 +74,39 @@ public class NaturalNumbers {
             }
         }
         return s;
+    }
+
+    public static int maxCommonDiv(int a, int b) {
+        if (b == 0) {
+            return a;
+        } else {
+            return maxCommonDiv(b, a % b);
+        }
+    }
+
+    public static int leastCommonMultiple(int a, int b){
+        return (a*b)/maxCommonDiv(a,b);
+    }
+
+    public int difNumbers(){
+        int nat=getNum();
+        int newNat, numCount=0;
+        int curNum;
+        for (int i = 0; i <10 ; i++) {
+            newNat=nat;
+            while(newNat>0){
+               curNum=newNat%ONEDIGIT;
+               if(curNum==i){
+                   numCount++;
+                   break;
+               }
+               newNat/=ONEDIGIT;
+            }
+
+        }
+        if(numCount==1){
+            System.out.println("This numbrer has many equal numbers");
+        }
+        return numCount;
     }
 }

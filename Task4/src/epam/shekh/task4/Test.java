@@ -8,11 +8,14 @@ public class Test {
         HeadOrTails heads = new HeadOrTails();
         heads.coinThrower(1000);
 
-        NaturalNumbers num=new NaturalNumbers(990);
+        NaturalNumbers num=new NaturalNumbers(9321);
         System.out.println("Max number in "+num.getNum()+" is "+num.maxNum());
 
         System.out.println("Is "+num.getNum()+" polyndrome? "+ num.polyCheck());
         System.out.println("Is "+num.getNum()+" simple? "+ num.isSimple(num.getNum()));
         System.out.println(num.primeNumbers());
+        System.out.println(NaturalNumbers.maxCommonDiv(7920,594));
+        System.out.println(NaturalNumbers.leastCommonMultiple(72,54));
+        System.out.println(num.difNumbers());
     }
 }
