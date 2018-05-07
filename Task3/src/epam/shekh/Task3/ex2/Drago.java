@@ -4,8 +4,8 @@ public class Drago {
     private static final int YOUNGPREIOD = 200;
     private static final int ADULTPREIOD = 200;
 
-    private static final int HEADSYOUNGPREIOD = 200;
-    private static final int HEADSADULTPREIOD = 200;
+    private static final int HEADSYOUNGPREIOD = 3;
+    private static final int HEADSADULTPREIOD = 2;
 
     private int age;
 
@@ -16,10 +16,10 @@ public class Drago {
     int dragoHeads() {
         int head = 0;
         if (age > 0) {
-            if (age < 200) {
-                head += age * 3 + 3;
-            } else if (age < 300) {
-                head += 203 + age * 2;
+            if (age <= YOUNGPREIOD) {
+                head += age * HEADSYOUNGPREIOD + 3;
+            } else if (age <= ADULTPREIOD) {
+                head += 203 + age * HEADSADULTPREIOD;
             } else {
                 head += 503 + age;
             }

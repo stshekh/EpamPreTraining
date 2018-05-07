@@ -37,7 +37,7 @@ public class Triangles {
 
             if(angleTrian(sqAB,sqAC,sqCB) || angleTrian(sqAB,sqCB,sqAC) || angleTrian(sqAC,sqCB,sqAB))
             {
-                System.out.println("It's an square triangle");
+                System.out.println("It's an right triangle");
             }
         }
         else{
@@ -46,7 +46,7 @@ public class Triangles {
 
     }
 
-    boolean angleTrian(double a, double b, double c){
+    private boolean angleTrian(double a, double b, double c){
         return a + b == c;
     }
 

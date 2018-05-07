@@ -12,9 +12,9 @@ public class Sequences {
 
         if (lastNum < preLastNum) {
             return false;
-        } else {
-            lastNum = preLastNum;
         }
+        lastNum = preLastNum;
+
         num /= ONEDIGIT;
         preLastNum = num % ONEDIGIT;
         if (lastNum < preLastNum) {
