@@ -125,8 +125,40 @@ public class MyArray {
             j--;
         }
         for (double elem : testArray) {
-            System.out.print(elem+" ");
+            System.out.print(elem + " ");
         }
+        System.out.println();
     }
 
+    String minFinder() {
+        double min = Double.MAX_VALUE;
+
+        for (double elem : arr) {
+
+            if (elem < min) {
+                min = elem;
+            }
+        }
+        return "Min " + min;
+    }
+
+    double sumParts() {
+        int firstNegative = -1, secondNegative = 0;
+        double sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0 && firstNegative == -1) {
+                firstNegative = i;
+            }
+            if (arr[i] < 0 && i > firstNegative && secondNegative == 0) {
+                secondNegative = i;
+            }
+        }
+        for (int i = firstNegative + 1; i < secondNegative; i++) {
+            sum += arr[i];
+        }
+        return sum;
+    }
 }
+
+
+
