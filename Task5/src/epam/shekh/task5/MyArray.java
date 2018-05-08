@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 
-public class MyArray {
+class MyArray {
     private double arr[];
 
     MyArray(double arr[], int min, int max) {
@@ -16,13 +16,13 @@ public class MyArray {
         this.arr = arr;
     }
 
-    double[] getArr() {
+    private double[] getArr() {
         return arr;
     }
 
     void arrayOutput() {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (double anArr : arr) {
+            System.out.print(anArr + " ");
         }
         System.out.println();
     }
@@ -45,9 +45,9 @@ public class MyArray {
 
         double sum = 0;
         double mul = 1;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
-            mul *= arr[i];
+        for (double anArr : arr) {
+            sum += anArr;
+            mul *= anArr;
         }
         sum /= arr.length;
         mul = Math.pow(mul, 1.0 / arr.length);

@@ -10,8 +10,8 @@ public class Test {
         System.out.println("Is it sorted? "+array.isSorted());
         System.out.println("Position of local minimum is "+array.localMin());
         System.out.println("Position of local maximum is "+array.localMax());
-
-        System.out.println("minimum "+array.minFinder());
+        array.revMass();
+        System.out.println(array.minFinder());
         System.out.println(array.sumParts());
     }
 }
