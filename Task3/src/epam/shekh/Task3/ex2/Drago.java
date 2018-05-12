@@ -2,7 +2,8 @@ package epam.shekh.Task3.ex2;
 
 public class Drago {
     private static final int YOUNGPREIOD = 200;
-    private static final int ADULTPREIOD = 200;
+    private static final int ADULTPREIOD = 300;
+    private static final int STARTHEADS = 3;
 
     private static final int HEADSYOUNGPREIOD = 3;
     private static final int HEADSADULTPREIOD = 2;
@@ -13,22 +14,18 @@ public class Drago {
         this.age = age;
     }
 
-    int dragoHeads() {
+    public int dragoHeads() {
         int head = 0;
         if (age > 0) {
             if (age <= YOUNGPREIOD) {
-                head += age * HEADSYOUNGPREIOD + 3;
+                head += age * HEADSYOUNGPREIOD + STARTHEADS;
             } else if (age <= ADULTPREIOD) {
-                head += 203 + age * HEADSADULTPREIOD;
+                head += YOUNGPREIOD * HEADSYOUNGPREIOD + (age - YOUNGPREIOD) * HEADSADULTPREIOD + STARTHEADS;
             } else {
-                head += 503 + age;
+                head += STARTHEADS + YOUNGPREIOD * HEADSYOUNGPREIOD + (ADULTPREIOD - YOUNGPREIOD) * HEADSADULTPREIOD + (age - ADULTPREIOD);
             }
         }
         return head;
     }
 
-    public void headsAndEyes() {
-        System.out.println("Total heads: " + dragoHeads());
-        System.out.println("Total eyes: " + dragoHeads() * 2);
-    }
 }

@@ -15,20 +15,22 @@ public class Test {
         Point b = new Point(4, 0);
         Point c = new Point(0, 0);
         Triangles tr = new Triangles(a, b, c);
-        tr.itTraingle();
+        System.out.println("It's a triangle? "+tr.isTraingle());
+        System.out.println("Is it right triangle?"+tr.isRightTriangle());
         System.out.println("-----------");
 
         Drago oldDrago = new Drago(200);
-        oldDrago.headsAndEyes();
+        System.out.println("Heads "+oldDrago.dragoHeads());
+        System.out.println("Eyes "+oldDrago.dragoHeads()*2);
         System.out.println("-----------");
 
-        LetterCheck.method1('k');
-        LetterCheck.method2('q');
-        LetterCheck.method3('q');
-        LetterCheck.method4('y');
+        System.out.println(LetterCheck.method1('k'));
+        System.out.println(LetterCheck.method2('e'));
+        System.out.println(LetterCheck.method3('q'));
+        System.out.println(LetterCheck.method4('y'));
         System.out.println("-----------");
 
-        MoodSensor.myMood();
+        System.out.println(MoodSensor.myMood());
         System.out.println("-----------");
 
         DateChecker date = new DateChecker(29, 2, 2000);

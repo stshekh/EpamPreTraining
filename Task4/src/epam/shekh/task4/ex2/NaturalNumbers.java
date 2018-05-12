@@ -12,10 +12,6 @@ public class NaturalNumbers {
         }
     }
 
-    private boolean posCheck() {
-        return getNum() > 0;
-    }
-
     public int getNum() {
         return num;
     }
@@ -45,11 +41,7 @@ public class NaturalNumbers {
             newNat = newNat * ONEDIGIT + (nat % ONEDIGIT);
             nat /= ONEDIGIT;
         }
-        if (getNum() != newNat) {
-            isOk = false;
-        } else {
-            isOk = true;
-        }
+        isOk = getNum() == newNat;
         return isOk;
     }
 

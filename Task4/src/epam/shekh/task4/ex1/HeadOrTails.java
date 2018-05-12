@@ -1,18 +1,18 @@
 package epam.shekh.task4.ex1;
 
+import java.util.Random;
+
 public class HeadOrTails {
     private int head, tails;
-    public void coinThrower(int attempts) {
-        int a;
+
+    public int coinThrower(int attempts) {
+        Random random = new Random();
+        boolean a = random.nextBoolean();
         for (int i = 0; i < attempts; i++) {
-            a = (int) (Math.random() * 2);
-            if (a == 0) {
+            if (a) {
                 head++;
-            } else {
-                tails++;
             }
         }
-        System.out.println("Head was: "+head);
-        System.out.println("Tails was: "+tails);
+        return head;
     }
 }

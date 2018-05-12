@@ -1,28 +1,30 @@
 package epam.shekh.Task3.ex4;
 
-import java.util.Random;
 
 public class MoodSensor {
-    public static void myMood() {
+    private static final String MOOD1 = ":)";
+    private static final String MOOD2 = ":(";
+    private static final String MOOD3 = "=D";
+    private static final String MOOD4 = ";(";
+
+    public static String myMood() {
         String s = "My current mood is: ";
         int a = (int) (Math.random() * 4);
 
         switch (a) {
             case 0:
-                s += ":)";
+                s += MOOD1;
                 break;
             case 1:
-                s += ":(";
+                s += MOOD2;
                 break;
             case 2:
-                s += "=D";
+                s += MOOD3;
                 break;
             case 3:
-                s += "=;(";
-                break;
-            default:
+                s += MOOD4;
                 break;
         }
-        System.out.println(s);
+        return s;
     }
 }

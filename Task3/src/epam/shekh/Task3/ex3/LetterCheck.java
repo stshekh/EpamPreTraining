@@ -6,21 +6,18 @@ import java.util.regex.Pattern;
 
 public class LetterCheck {
 
-    public static void method1(char c) {
-        boolean isOk = false;
+    public static boolean method1(char c) {
         char[] letters = {'e', 'y', 'u', 'i', 'o', 'a'};
         for (char let : letters) {
             if (c == let) {
-                isOk = true;
+                return true;
             }
         }
-        if (isOk) {
-            System.out.println("Letter " + c + " is vocalic");
-        }
+        return false;
     }
 
-    public static void method2(char c) {
-        boolean isOk = false;
+    public static boolean method2(char c) {
+
         switch (c) {
             case 'e':
 
@@ -33,32 +30,20 @@ public class LetterCheck {
             case 'o':
 
             case 'a':
-                isOk = true;
-                break;
+                return true;
 
         }
-        if (isOk) {
-            System.out.println("Letter " + c + " is vocalic");
-        }
+        return false;
     }
 
-    public static void method3(char c) {
-        boolean isOk = false;
-        if (c == 'a' || c == 'e' || c == 'y' || c == 'u' || c == 'i' || c == 'o') {
-            isOk = true;
-        }
-        if (isOk){
-            System.out.println("Letter " + c + " is vocalic");
-        }
-
+    public static boolean method3(char c) {
+        return c == 'a' || c == 'e' || c == 'y' || c == 'u' || c == 'i' || c == 'o';
     }
 
-    public static void method4(char c) {
+    public static boolean method4(char c) {
 
         Pattern pt = Pattern.compile("[eyuioa]");//pattern for vocalic letters
-        Matcher mtch = pt.matcher(c+"");
-        if(mtch.find())
-            System.out.println("Letter " + c + " is vocalic");
-
+        Matcher mtch = pt.matcher(c + "");
+        return mtch.find();
     }
 }

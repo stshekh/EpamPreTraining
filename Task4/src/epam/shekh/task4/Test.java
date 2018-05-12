@@ -7,7 +7,8 @@ public class Test {
     public static void main(String[] args) {
         System.out.println("Excercise 1---------------");
         HeadOrTails heads = new HeadOrTails();
-        heads.coinThrower(1000);
+        System.out.println("Heads: "+heads.coinThrower(1000));
+        System.out.println("Tails: "+(1000-heads.coinThrower(1000)));
 
         System.out.println("\nExcercise 2---------------");
         NaturalNumbers num=new NaturalNumbers(496);
