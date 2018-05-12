@@ -12,11 +12,13 @@ public class Test {
     public static void main(String[] args) {
         //Excercise 1
         System.out.println("****************----Dinasours mass converter----*****************");
-        MassConverter.massConvert(14);
+        System.out.println("To gramms"+MassConverter.gramConvert(14));
+        System.out.println("To miligramms"+MassConverter.miligramConvert(14));
+        System.out.println("To tones"+MassConverter.toneConvert(14));
 
         //Excercise 2
         System.out.println("\n****************----Ring area----*****************");
-        RingSquare.ring(14,10);
+        System.out.println("Ring area is"+RingSquare.ring(14,10));
 
         //Excercise 3
         System.out.println("\n****************----Number change----*****************");
