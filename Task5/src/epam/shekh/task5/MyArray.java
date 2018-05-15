@@ -113,7 +113,7 @@ class MyArray {
         return -1;
     }
 
-    void revMass() {
+    double [] revMass() {
         double testArray[] = Arrays.copyOf(getArr(), getArr().length);
         int i = 0;
         int j = testArray.length - 1;
@@ -124,10 +124,7 @@ class MyArray {
             i++;
             j--;
         }
-        for (double elem : testArray) {
-            System.out.print(elem + " ");
-        }
-        System.out.println();
+        return testArray;
     }
 
     String minFinder() {
