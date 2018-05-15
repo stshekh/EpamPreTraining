@@ -50,7 +50,7 @@ public class NaturalNumbers {
 
 
         //if (!posCheck()) return false;
-        for (int i = 2; i < nat + 1; i++) {
+        for (int i = 2; i <= (nat/2)+1; i++) {
             if (nat % i == 0 && i != nat) {
                 return false;
             }
