@@ -114,7 +114,7 @@ class MyArray {
     }
 
     double [] revMass() {
-        double testArray[] = Arrays.copyOf(getArr(), getArr().length);
+        double testArray[] = Arrays.copyOf(getArr(), getArr().length);//измегять оригинальный массив
         int i = 0;
         int j = testArray.length - 1;
         while (j > i) {
