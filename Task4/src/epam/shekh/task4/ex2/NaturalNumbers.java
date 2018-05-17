@@ -5,11 +5,7 @@ public class NaturalNumbers {
     private static final int ONEDIGIT = 10;
 
     public NaturalNumbers(int num) {
-        if (num > 0) {
-            this.num = num;
-        } else {
-            this.num = -num;
-        }
+        this.num = (num > 0) ? num : -num;
     }
 
     public int getNum() {
@@ -19,9 +15,6 @@ public class NaturalNumbers {
     public int maxNum() {
         int natNumber = getNum();
         int max = -1;
-//        if (!posCheck()) {
-//            return 0;
-//        }
         while (natNumber > 0) {
             if (natNumber % ONEDIGIT > max) {
                 max = natNumber % ONEDIGIT;
@@ -32,8 +25,6 @@ public class NaturalNumbers {
     }
 
     public boolean polyCheck() {
-        //if (!posCheck()) return false;
-        boolean isOk;
         int nat = getNum();
         int newNat = 0;
 
@@ -41,16 +32,13 @@ public class NaturalNumbers {
             newNat = newNat * ONEDIGIT + (nat % ONEDIGIT);
             nat /= ONEDIGIT;
         }
-        isOk = getNum() == newNat;
-        return isOk;
+        return getNum() == newNat;
     }
 
 
     public boolean isSimple(int nat) {
-
-
-        //if (!posCheck()) return false;
-        for (int i = 2; i <= (nat/2)+1; i++) {
+        int number = (nat / 2) + 1;
+        for (int i = 2; i <= number; i++) {
             if (nat % i == 0 && i != nat) {
                 return false;
             }
@@ -58,15 +46,14 @@ public class NaturalNumbers {
         return true;
     }
 
-    public String primeNumbers() {
+    public String primeDividers() {
         int i;
-        int nat = getNum();
-        String s = "Prime numbers of " + nat + ":";
-        for (i = 2; i <= nat; i++) {
-            if (isSimple(i) && nat % i == 0) {
+        int natNumber = getNum();
+        int halfNatNumber = (natNumber / 2) + 1;
+        String s = "Prime numbers of " + natNumber + ":";
+        for (i = 2; i <= halfNatNumber; i++) {
+            if (isSimple(i) && natNumber % i == 0) {
                 s += " " + i;
-                nat /= i;
-                i--;
             }
         }
         return s;
@@ -85,11 +72,11 @@ public class NaturalNumbers {
     }
 
     public int difNumbers() {
-        int nat = getNum();
+        int natNumber = getNum();
         int newNat, numCount = 0;
         int curNum;
         for (int i = 0; i < 10; i++) {
-            newNat = nat;
+            newNat = natNumber;
             while (newNat > 0) {
                 curNum = newNat % ONEDIGIT;
                 if (curNum == i) {
@@ -107,14 +94,13 @@ public class NaturalNumbers {
     }
 
     public boolean perfectNumber() {
-        int nat = getNum();
+        int natNumber = getNum();
         int perfSum = 0;
-
-        for (int i = 1; i < nat; i++) {
-            if (nat % i == 0) {
+        for (int i = 1; i < natNumber; i++) {
+            if (natNumber % i == 0) {
                 perfSum += i;
             }
         }
-        return (nat == perfSum);
+        return (natNumber == perfSum);
     }
 }

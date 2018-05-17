@@ -17,7 +17,7 @@ public class ArrayArrays {
         this.arr = arr;
     }
 
-    private double[][] getArr() {
+    double[][] getArr() {
         return arr;
     }
 
