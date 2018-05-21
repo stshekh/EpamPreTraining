@@ -72,11 +72,10 @@ public class NaturalNumbers {
     }
 
     public int difNumbers() {
-        int natNumber = getNum();
         int newNat, numCount = 0;
         int curNum;
         for (int i = 0; i < 10; i++) {
-            newNat = natNumber;
+            newNat = getNum();
             while (newNat > 0) {
                 curNum = newNat % ONEDIGIT;
                 if (curNum == i) {
@@ -87,14 +86,11 @@ public class NaturalNumbers {
             }
 
         }
-        if (numCount == 1) {
-            System.out.println("This numbrer has many equal figures");
-        }
         return numCount;
     }
 
     public boolean perfectNumber() {
-        int natNumber = getNum();
+        int natNumber = getNum() / 2 + 1;
         int perfSum = 0;
         for (int i = 1; i < natNumber; i++) {
             if (natNumber % i == 0) {

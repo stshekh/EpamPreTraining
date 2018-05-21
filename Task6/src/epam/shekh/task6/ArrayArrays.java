@@ -68,33 +68,31 @@ public class ArrayArrays {
 
     String localMin() {
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 1; j < arr[0].length-1; j++) {
+            for (int j = 1; j < arr[0].length - 1; j++) {
                 {
                     if (arr[i][j] < arr[i][j - 1] && arr[i][j] < arr[i][j + 1])
-                        return "("+i+";"+j+")";
+                        return "(" + i + ";" + j + ")";
                 }
 
             }
         }
-        return ""+-1;
+        return "" + -1;
     }
 
     String localMax() {
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 1; j < arr[0].length-1; j++) {
+            for (int j = 1; j < arr[0].length - 1; j++) {
                 {
                     if (arr[i][j] > arr[i][j - 1] && arr[i][j] > arr[i][j + 1])
-                        return "("+i+";"+j+")";
+                        return "(" + i + ";" + j + ")";
                 }
 
             }
         }
-        return ""+-1;
+        return "" + -1;
     }
 
-    double [][] revMass() {
-        double testArray[][] = Arrays.copyOf(arr,arr.length);
-
+    double[][] revMass() {
         double temp;
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr[0].length; j++) {
@@ -107,18 +105,16 @@ public class ArrayArrays {
     }
 
     double maxLocalMin() {
-        double max=Double.MIN_VALUE;
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 1; j < arr[0].length-1; j++) {
+        double max = Double.MIN_VALUE;
+        for (double[] anArr : arr) {
+            for (int j = 1; j < arr[0].length - 1; j++) {
                 {
-                    if (arr[i][j] < arr[i][j - 1] && arr[i][j] < arr[i][j + 1]){
-                        if(arr[i][j]>max){
-                            max=arr[i][j];
+                    if (anArr[j] < anArr[j - 1] && anArr[j] < anArr[j + 1]) {
+                        if (anArr[j] > max) {
+                            max = anArr[j];
                         }
                     }
-
                 }
-
             }
         }
         return max;
