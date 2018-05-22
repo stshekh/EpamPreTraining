@@ -9,11 +9,13 @@ class MyArray {
 
     MyArray(double arr[], int min, int max) {
         Random random = new Random();
-
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(max - min + 1) + min;
         }
         this.arr = arr;
+    }
+    MyArray(double... arr){
+        this.arr=arr;
     }
 
     private double[] getArr() {
@@ -51,7 +53,7 @@ class MyArray {
         }
         sum /= arr.length;
         mul = Math.pow(mul, 1.0 / arr.length);
-        return "Average geometric is " + mul + "\nAver arifmetic is " + sum;
+        return "Average geometric is " + mul + "\nAverage arifmetic is " + sum;
     }
 
     private boolean isUpperSorted() {
